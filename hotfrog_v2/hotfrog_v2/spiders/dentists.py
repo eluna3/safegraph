@@ -36,7 +36,7 @@ class DentistsSpider(scrapy.Spider):
             company_name = select.xpath('./div/div/div[2]/h3/a/strong/text()').extract()
             company_name = company_name[0].strip().title()
             company_address = select.xpath('./div/div/div[2]/span/text()').extract()
-            company_address = company_address[0].strip().title().split(", ") if company_address else ''
+            company_address = company_address[0].strip().title() if company_address else ''
             company_website = select.xpath('./div/div/div[2]/p/small/span/a/@data-href').extract()
             company_website = company_website[0].strip() if company_website else ''
 
